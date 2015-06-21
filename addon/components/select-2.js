@@ -33,6 +33,7 @@ var Select2Component = Ember.Component.extend({
   // Bindings that may be overwritten in the template
   inputSize: "input-md",
   cssClass: null,
+  createSearchChoice: null,
   optionIdPath: "id",
   optionValuePath: null,
   optionLabelPath: 'text',
@@ -81,6 +82,7 @@ var Select2Component = Ember.Component.extend({
     options.minimumResultsForSearch = this.get('searchEnabled') ? 0 : -1 ;
     options.minimumInputLength = this.get('minimumInputLength');
     options.maximumInputLength = this.get('maximumInputLength');
+    options.createSearchChoice = this.get('createSearchChoice');
 
     // ensure there is a value separator if needed (= when in multiple selection with value binding)
     var missesValueSeperator = this.get('multiple') && this.get('optionValuePath') && !this.get('valueSeparator');
